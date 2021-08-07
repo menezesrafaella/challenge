@@ -4,11 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/game-list',
+    redirectTo: '/games/game-list',
     pathMatch: 'full',
   },
   {
-    path: 'game-list',
+    path: 'games',
     loadChildren: () => import('./games').then((m) => m.GamesModule),
   },
 ];

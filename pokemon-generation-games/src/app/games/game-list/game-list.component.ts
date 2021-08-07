@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GamesService } from '../shared/games.service';
 
 @Component({
   selector: 'app-game-list',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
+    this.generationGames();
+  }
+
+  generationGames(){
+    return this.gamesService.getGameGenerationList().subscribe((generation) => {
+      console.log(generation)
+    })
   }
 
 }
