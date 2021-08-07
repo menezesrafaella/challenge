@@ -10,7 +10,7 @@ export class GamesService {
 
   constructor(private http: HttpClient) {}
 
-  getGameGenerationList(){
+  getGameGenerationList(): any{
     return this.http.get('https://pokeapi.co/api/v2/generation/').pipe(
       map((obj) => obj),
       catchError(async (error) => console.log(error))

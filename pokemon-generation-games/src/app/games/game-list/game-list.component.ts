@@ -8,16 +8,28 @@ import { GamesService } from '../shared/games.service';
 })
 export class GameListComponent implements OnInit {
 
+  games: any[];
+
+  cols: any[];
+
   constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
     this.generationGames();
+
+    this.cols = [
+      { field: 'name', header: 'Nome' },
+      { field: 'url', header: 'URL' },
+  ];
   }
 
-  generationGames(){
+  generationGames(): any{
     return this.gamesService.getGameGenerationList().subscribe((generation) => {
-      console.log(generation)
-    })
+      console.log(generation);
+      this.games = generation.results;
+    });
   }
+
+
 
 }

@@ -4,6 +4,7 @@ import { GameComponent } from './game/game.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GamesRoutingModule } from './games-routing.module';
 import { GamesService } from './shared/games.service';
+import { PrimengModule } from '../primeng.module';
 
 @NgModule({
   declarations: [
@@ -11,9 +12,10 @@ import { GamesService } from './shared/games.service';
     GameComponent
   ],
   imports: [
-    CommonModule, GamesRoutingModule
+    CommonModule, GamesRoutingModule, PrimengModule
   ],
-  providers:[GamesService]
-
+  providers: [
+    GamesService
+  ]
 })
 export class GamesModule { }
