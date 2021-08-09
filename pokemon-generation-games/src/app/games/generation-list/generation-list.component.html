@@ -14,10 +14,12 @@
             <tr>
                 <td *ngFor="let col of columns">
                     <span *ngIf="col.field === 'name'">
-                        {{rowData['name']}}
+                        {{rowData['name'] | generation}}
                     </span>
                     <span *ngIf="col.field === 'url'">
-                        <p-button label="Click" class="p-button-info" routerLink="/games/detail/{{rowData.name}}"></p-button>
+                        <p-button class="p-button-info" routerLink="/games/detail/{{rowData.name}}">
+                            <i class="pi pi-search"></i>
+                        </p-button>
                     </span>
                 </td>
             </tr>

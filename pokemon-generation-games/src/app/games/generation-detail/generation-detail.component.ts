@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from '../shared/games.service';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-generation-detail',

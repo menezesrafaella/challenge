@@ -3,3 +3,6 @@ h1 {
     font-weight: bold;
 }
 
+::ng-deep p-table, .p-datatable-wrapper{
+    margin-left: 10px;
+}

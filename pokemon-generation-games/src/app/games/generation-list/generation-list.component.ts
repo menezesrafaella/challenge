@@ -12,8 +12,6 @@ export class GenerationListComponent implements OnInit {
 
   games: any;
 
-  display = false;
-
   cols: any[];
 
   constructor(private gamesService: GamesService) { }
