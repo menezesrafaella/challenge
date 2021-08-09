@@ -4,7 +4,7 @@ import { GamesService } from '../shared/games.service';
 @Component({
   selector: 'app-generation-list',
   templateUrl: './generation-list.component.html',
-  styleUrls: ['./generation-list.component.sass']
+  styleUrls: ['./generation-list.component.scss']
 })
 export class GenerationListComponent implements OnInit {
 

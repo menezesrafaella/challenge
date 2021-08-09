@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GenerationListComponent } from './generation-list.component';
 
-describe('GameListComponent', () => {
+describe('GenerationListComponent', () => {
   let component: GenerationListComponent;
   let fixture: ComponentFixture<GenerationListComponent>;
 
