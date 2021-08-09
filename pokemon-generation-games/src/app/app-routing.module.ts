@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/games/game-list',
+    redirectTo: '/games/generation-list',
     pathMatch: 'full',
   },
   {

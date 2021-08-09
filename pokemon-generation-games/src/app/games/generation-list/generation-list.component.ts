@@ -2,24 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../shared/games.service';
 
 @Component({
-  selector: 'app-game-list',
-  templateUrl: './game-list.component.html',
-  styleUrls: ['./game-list.component.sass']
+  selector: 'app-generation-list',
+  templateUrl: './generation-list.component.html',
+  styleUrls: ['./generation-list.component.sass']
 })
-export class GameListComponent implements OnInit {
+export class GenerationListComponent implements OnInit {
 
   games: any[];
 
   cols: any[];
 
+  display: boolean = false;
+
   constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
-    this.generationGames();
 
-    this.cols = [
+  this.generationGames();
+  
+  this.cols = [
       { field: 'name', header: 'Nome' },
-      { field: 'url', header: 'URL' },
+      { field: 'url', header: 'Ver detalhes' },
   ];
   }
 
@@ -30,6 +33,9 @@ export class GameListComponent implements OnInit {
     });
   }
 
-
+  getDetailedGeneration(row): any{
+    this.display = true;
+    console.log(row);
+  }
 
 }

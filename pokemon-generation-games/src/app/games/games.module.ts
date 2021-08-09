@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GameComponent } from './game/game.component';
-import { GameListComponent } from './game-list/game-list.component';
+import { GenerationListComponent } from './generation-list/generation-list.component';
 import { GamesRoutingModule } from './games-routing.module';
 import { GamesService } from './shared/games.service';
 import { PrimengModule } from '../primeng.module';
 
 @NgModule({
   declarations: [
-    GameListComponent,
-    GameComponent
+    GenerationListComponent,
   ],
   imports: [
     CommonModule, GamesRoutingModule, PrimengModule
