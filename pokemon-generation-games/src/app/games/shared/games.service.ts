@@ -16,4 +16,11 @@ export class GamesService {
       catchError(async (error) => console.log(error))
     );
   }
+
+  getGameGenerationById(id): any {
+    return this.http.get(id).pipe(
+    map((obj) => obj),
+    catchError(async (error) => console.log(error))
+    );
+  }
 }

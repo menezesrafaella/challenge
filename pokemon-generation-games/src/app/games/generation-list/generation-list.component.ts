@@ -8,18 +8,17 @@ import { GamesService } from '../shared/games.service';
 })
 export class GenerationListComponent implements OnInit {
 
-  games: any[];
+  generation: any[];
+
+  games: any;
 
   cols: any[];
-
-  display: boolean = false;
 
   constructor(private gamesService: GamesService) { }
 
   ngOnInit(): void {
 
   this.generationGames();
-  
   this.cols = [
       { field: 'name', header: 'Nome' },
       { field: 'url', header: 'Ver detalhes' },
@@ -27,15 +26,16 @@ export class GenerationListComponent implements OnInit {
   }
 
   generationGames(): any{
-    return this.gamesService.getGameGenerationList().subscribe((generation) => {
-      console.log(generation);
-      this.games = generation.results;
+    return this.gamesService.getGameGenerationList().subscribe((list) => {
+      this.generation = list.results;
     });
   }
 
   getDetailedGeneration(row): any{
-    this.display = true;
-    console.log(row);
+    const id = row.url;
+    return this.gamesService.getGameGenerationById(id).subscribe((generation) => {
+      this.games = generation;
+    });
   }
 
 }
