@@ -18,7 +18,7 @@ export class GamesService {
   }
 
   getGameGenerationById(id): any {
-    return this.http.get(id).pipe(
+    return this.http.get(`https://pokeapi.co/api/v2/generation/${id}/`).pipe(
     map((obj) => obj),
     catchError(async (error) => console.log(error))
     );

@@ -12,6 +12,8 @@ export class GenerationListComponent implements OnInit {
 
   games: any;
 
+  display = false;
+
   cols: any[];
 
   constructor(private gamesService: GamesService) { }
@@ -28,13 +30,7 @@ export class GenerationListComponent implements OnInit {
   generationGames(): any{
     return this.gamesService.getGameGenerationList().subscribe((list) => {
       this.generation = list.results;
-    });
-  }
-
-  getDetailedGeneration(row): any{
-    const id = row.url;
-    return this.gamesService.getGameGenerationById(id).subscribe((generation) => {
-      this.games = generation;
+      console.log(list);
     });
   }
 

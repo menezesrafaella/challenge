@@ -17,7 +17,7 @@
                         {{rowData['name']}}
                     </span>
                     <span *ngIf="col.field === 'url'">
-                        <p-button label="Click" class="p-button-info" (click)="getDetailedGeneration(rowData)"></p-button>
+                        <p-button label="Click" class="p-button-info" routerLink="/games/detail/{{rowData.name}}"></p-button>
                     </span>
                 </td>
             </tr>
