@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GamesService } from '../shared/games.service';
 
@@ -7,15 +7,21 @@ import { GamesService } from '../shared/games.service';
   templateUrl: './generation-detail.component.html',
   styleUrls: ['./generation-detail.component.scss']
 })
-export class GenerationDetailComponent implements OnInit {
+export class GenerationDetailComponent implements OnInit, AfterContentInit {
 
   id: number;
 
   games: any;
 
+  species: [];
+
+  types: [];
+
+  versions: [];
+
   constructor(  
     private route: ActivatedRoute,
-    private gamesService: GamesService
+    private gamesService: GamesService,
   ) { }
 
   ngOnInit(): void {
@@ -46,17 +52,32 @@ export class GenerationDetailComponent implements OnInit {
       case 'generation-viii':
         this.id = 8;
         break;
-      default:
-        alert(`Não existem informações sobre a ${generation}.`);
-    }
+        default:
+          alert(`Não existem informações sobre a ${generation}.`);
+        }
 
-    this.getDetailedGeneration(this.id);
+  }
 
+  ngAfterContentInit() {
+    this.games = setTimeout(
+      () => this.getDetailedGeneration(this.id),
+      1000
+    );
   }
 
   getDetailedGeneration(id): any{
     return this.gamesService.getGameGenerationById(id).subscribe((generation) => {
       this.games = generation;
+      console.log(this.games)
+      if (this.games.pokemon_species){
+        this.species = this.games.pokemon_species;
+      }
+      if (this.games.types){
+        this.types = this.games.types;
+      }
+      if (this.games.version_groups){
+        this.versions = this.games.version_groups;
+      }
     });
   }
 

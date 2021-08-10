@@ -1,0 +1,23 @@
+h1.title-detail{
+    font-size: 1.5em;
+    color: #3759A2;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+section.content-detail{
+    padding: 20px;
+    border-radius: 3px;
+    background: white;
+    text-align: center;
+    width: 40%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+//scrolbar
+::ng-deep .p-scrollpanel .p-scrollpanel-bar {
+    background: #3759A2;
+    border: 0 none;
+}
