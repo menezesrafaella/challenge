@@ -1,23 +1,54 @@
-h1.title-detail{
-    font-size: 1.5em;
-    color: #3759A2;
-    padding: 10px;
-    text-align: center;
-    font-weight: bold;
+h1.title-header {
+  font-size: 1.5em;
+  color: #3759a2;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 30ch;
+  animation: typing 2s steps(19), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-section.content-detail{
-    padding: 20px;
-    border-radius: 3px;
-    background: white;
-    text-align: center;
-    width: 40%;
-    margin-left:auto; 
-    margin-right:auto;
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+section.container {
+  padding: 20px;
+  border-radius: 3px;
+  background: #f1f1f1;
+  text-align: center;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 3px solid #3759a2;
 }
 
 //scrolbar
 ::ng-deep .p-scrollpanel .p-scrollpanel-bar {
-    background: #3759A2;
-    border: 0 none;
+  background: #3759a2;
+  border: 0 none;
+}
+
+li, .title{
+  font-family: 'Roboto Mono', monospace;
+}
+
+li {
+  padding: 5px;
+}
+
+.title{
+  font-weight: bold;
+  padding: 10px 0;
 }

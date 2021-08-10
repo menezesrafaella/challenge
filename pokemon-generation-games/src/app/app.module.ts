@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    PrimengModule
+    PrimengModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

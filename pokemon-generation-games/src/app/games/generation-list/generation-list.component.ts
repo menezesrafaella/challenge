@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesService } from '../shared/games.service';
+import { fadeInOut } from '../shared/helpers/animation';
+import { GamesService } from '../shared/service/games.service';
 
 @Component({
   selector: 'app-generation-list',
   templateUrl: './generation-list.component.html',
-  styleUrls: ['./generation-list.component.scss']
+  styleUrls: ['./generation-list.component.scss'],
+  animations: [fadeInOut],
 })
 export class GenerationListComponent implements OnInit {
 
@@ -13,6 +15,8 @@ export class GenerationListComponent implements OnInit {
   games: any;
 
   cols: any[];
+
+  public loading = false;
 
   constructor(private gamesService: GamesService) { }
 
@@ -26,9 +30,13 @@ export class GenerationListComponent implements OnInit {
   }
 
   generationGames(): any{
+    this.loading = true;
+
     return this.gamesService.getGameGenerationList().subscribe((list) => {
       this.generation = list.results;
-      console.log(list);
+      this.loading = false;
+    }, err => {
+      this.loading = false;
     });
   }
 

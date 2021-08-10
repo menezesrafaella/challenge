@@ -2,19 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GenerationListComponent } from './generation-list/generation-list.component';
 import { GamesRoutingModule } from './games-routing.module';
-import { GamesService } from './shared/games.service';
+import { GamesService } from './shared/service/games.service';
 import { PrimengModule } from '../primeng.module';
 import { GenerationDetailComponent } from './generation-detail/generation-detail.component';
-import { GenerationPipe } from './shared/generation.pipe';
+import { GenerationPipe } from './shared/pipe/generation.pipe';
+import { LoadingComponent } from './shared/components/loading/loading.component';
 
 @NgModule({
   declarations: [
     GenerationListComponent,
     GenerationDetailComponent,
     GenerationPipe,
+    LoadingComponent,
   ],
   imports: [
     CommonModule, GamesRoutingModule, PrimengModule
+
   ],
   providers: [
     GamesService

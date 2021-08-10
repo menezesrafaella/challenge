@@ -1,11 +1,13 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GamesService } from '../shared/games.service';
+import { fadeInOut } from '../shared/helpers/animation';
+import { GamesService } from '../shared/service/games.service';
 
 @Component({
   selector: 'app-generation-detail',
   templateUrl: './generation-detail.component.html',
-  styleUrls: ['./generation-detail.component.scss']
+  styleUrls: ['./generation-detail.component.scss'],
+  animations: [fadeInOut],
 })
 export class GenerationDetailComponent implements OnInit, AfterContentInit {
 
@@ -18,6 +20,8 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
   types: [];
 
   versions: [];
+
+  public loading = false;
 
   constructor(  
     private route: ActivatedRoute,
@@ -58,17 +62,18 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
 
   }
 
-  ngAfterContentInit() {
+  ngAfterContentInit(): void {
     this.games = setTimeout(
       () => this.getDetailedGeneration(this.id),
-      1000
+      100
     );
   }
 
   getDetailedGeneration(id): any{
+    this.loading = true;
+
     return this.gamesService.getGameGenerationById(id).subscribe((generation) => {
       this.games = generation;
-      console.log(this.games)
       if (this.games.pokemon_species){
         this.species = this.games.pokemon_species;
       }
@@ -78,9 +83,16 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
       if (this.games.version_groups){
         this.versions = this.games.version_groups;
       }
+      this.loading = false;
+    }, err => {
+      this.loading = false;
     });
   }
 
-
+  firstLetter(word): any{
+    if (word){
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+  }
 
 }

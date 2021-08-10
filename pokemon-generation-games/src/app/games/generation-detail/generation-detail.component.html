@@ -1,37 +1,39 @@
-
-<section class="content-detail">
-    <header>
-        <h1 class="title-detail">{{ games.name | generation }} </h1>
-    </header>
-    
-    <div>
-        <p-divider type="dashed"></p-divider>
-        <p>Principal Região: {{ games.main_region.name }}</p>
-        <p-divider type="dashed"></p-divider>
-        <p>Movimentos: {{ games.moves.length }}</p>
-        <p-divider type="dashed"></p-divider>
-        <p-scrollPanel [style]="{width: '100%', height: '200px'}" styleClass="custom">
-            <p>Pokémons: </p>
-            <p>Total: {{ games.pokemon_species.length}}</p>
-            <div *ngFor="let specie of species">
-                <ul>
-                    <li>{{ specie.name }}</li>
-                </ul>
-            </div>
-        </p-scrollPanel>
-        <p-divider type="dashed"></p-divider>
-        <p>Tipos: </p>
-        <div *ngFor="let type of types">
-            <ul>
-                <li>{{ type.name }}</li>
-            </ul>
-        </div>
-        <p-divider type="dashed"></p-divider>
-        <p>Versões: </p>
-        <div *ngFor="let version of versions">
-            <ul>
-                <li>{{ version.name }}</li>
-            </ul>
-        </div>
+<section class="container" *ngIf="games.name">
+  <header>
+    <h1 class="title-header">{{ games.name | generation }} </h1>
+  </header>
+  <div>
+    <p-divider type="dashed"></p-divider>
+    <p class="title" >Principal Região: {{ firstLetter(games.main_region.name) }}</p>
+    <p-divider type="dashed"></p-divider>
+    <p class="title">Movimentos: {{ games.moves.length }}</p>
+    <p-divider type="dashed"></p-divider>
+    <p-scrollPanel [style]="{width: '100%', height: '200px'}" styleClass="custom">
+      <div class="title">
+        <p>Pokémons (total: {{ games.pokemon_species.length}}): </p>
+      </div>
+      <div *ngFor="let specie of species">
+        <ul>
+          <li>{{ firstLetter(specie.name) }}</li>
+        </ul>
+      </div>
+    </p-scrollPanel>
+    <div *ngIf="types.length > 0">
+      <p-divider type="dashed"></p-divider>
+      <p class="title">Tipos: </p>
+      <div *ngFor="let type of types">
+        <ul>
+          <li>{{ firstLetter(type.name) }}</li>
+        </ul>
+      </div>
     </div>
+    <p-divider type="dashed"></p-divider>
+    <p class="title">Versões: </p>
+    <div *ngFor="let version of versions">
+      <ul>
+        <li>{{ firstLetter(version.name) }}</li>
+      </ul>
+    </div>
+  </div>
 </section>
+<app-loading *ngIf="loading" [@fadeInOut]></app-loading>

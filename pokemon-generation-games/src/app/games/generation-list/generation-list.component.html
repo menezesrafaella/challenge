@@ -1,29 +1,31 @@
 <header>
-    <div class="title">
-        <img src="../../../assets/logo.png" height="50px" width="115px">
-        <h1>Gerações de Games</h1>
-    </div>
+  <div class="title">
+    <img src="../../../assets/logo.png" height="50px" width="115px">
+    <h1>Gerações de Games</h1>
+  </div>
 </header>
 <section>
-    <p-table [columns]="cols" [value]="generation">
-        <ng-template pTemplate="header" let-columns>
-            <tr>
-                <th *ngFor="let col of columns">
-                    {{col.header}}
-                </th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-rowData let-columns="columns">
-            <tr>
-                <td *ngFor="let col of columns">
-                    <span *ngIf="col.field === 'name'">
-                        {{rowData['name'] | generation}}
-                    </span>
-                    <span *ngIf="col.field === 'url'">
-                        <img class="button-pokeball" src="../../../assets/pokeball.ico" height="30px" width="30px" routerLink='/games/detail/{{rowData.name}}'>
-                    </span>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
+  <p-table [columns]="cols" [value]="generation">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col.header}}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          <span *ngIf="col.field === 'name'">
+            {{rowData['name'] | generation}}
+          </span>
+          <span *ngIf="col.field === 'url'">
+            <img class="button-pokeball" src="../../../assets/pokeball.ico" height="30px" width="30px"
+              routerLink='/games/detail/{{rowData.name}}'>
+          </span>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </section>
+<app-loading *ngIf="loading" [@fadeInOut]></app-loading>
