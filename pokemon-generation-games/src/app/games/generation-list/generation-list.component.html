@@ -1,5 +1,8 @@
 <header>
-    <h1>Gerações de Games - Pokémon</h1>
+    <div class="title">
+        <img src="../../../assets/logo.png" height="50px" width="115px">
+        <h1>Gerações de Games</h1>
+    </div>
 </header>
 <section>
     <p-table [columns]="cols" [value]="generation">
@@ -17,9 +20,7 @@
                         {{rowData['name'] | generation}}
                     </span>
                     <span *ngIf="col.field === 'url'">
-                        <p-button class="p-button-info" routerLink="/games/detail/{{rowData.name}}">
-                            <i class="pi pi-search"></i>
-                        </p-button>
+                        <img class="button-pokeball" src="../../../assets/pokeball.ico" height="30px" width="30px" routerLink='/games/detail/{{rowData.name}}'>
                     </span>
                 </td>
             </tr>

@@ -1,8 +1,84 @@
 h1 {
     font-size: 2em;
     font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    color: #3759A2;
 }
 
-::ng-deep p-table, .p-datatable-wrapper{
-    margin-left: 10px;
+.title{
+    padding: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
+
+//p-table
+
+::ng-deep .p-datatable .p-datatable-tbody > tr > td, 
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    text-align: center;
+    background: white;
+    color: black;
+    border: 2px solid #ffd069;
+}
+
+::ng-deep .p-datatable{
+    font-family: 'Roboto Mono', monospace;
+    width: 40%;
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+//button
+
+.button-pokeball{
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.button-pokeball:hover{
+    -webkit-animation: swing 1s ease;
+    animation: swing 1s ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+}
+
+.button-pokeball:active{
+    border: 2px solid rgb(0, 0, 0);
+}
+
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+

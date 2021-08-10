@@ -20,7 +20,7 @@ export class GenerationListComponent implements OnInit {
 
   this.generationGames();
   this.cols = [
-      { field: 'name', header: 'Nome' },
+      { field: 'name', header: 'Gerações' },
       { field: 'url', header: 'Ver detalhes' },
   ];
   }
