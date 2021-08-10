@@ -8,8 +8,17 @@
     justify-content: center;
     align-items: center;
 
-  .u-rubber-band {
-    animation: rubberBand 1200ms infinite;
+  .u-bounce {
+    animation: bounce 1200ms infinite;
+  }
+
+  @keyframes bounce {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-15px);
+    }
   }
 
   $size: 50px;

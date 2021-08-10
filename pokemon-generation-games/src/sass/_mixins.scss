@@ -1,0 +1,8 @@
+@mixin centralize-title-animation($px, $width, $em) {
+  @media (max-width: $px) {
+    h1.title-header {
+      width: $width;
+      font-size: $em;
+    }
+  }
+}

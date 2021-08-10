@@ -1,102 +1,69 @@
-h1.title-header {
-  font-size: 1.5em;
-  color: #3759a2;
-  font-weight: bold;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  width: 30ch;
-  animation: typing 2s steps(19), blink 0.5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-}
+@import "../../../sass/variables";
+@import "../../../sass/mixins";
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
-}
-
-section.container {
-  padding: 20px;
-  border-radius: 3px;
-  background: #f1f1f1;
-  text-align: center;
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  border: 3px solid #3759a2;
-}
-
-//scrolbar
-::ng-deep .p-scrollpanel .p-scrollpanel-bar {
-  background: #3759a2;
-  border: 0 none;
-}
-
-li,
-.title {
-  font-family: "Roboto Mono", monospace;
-}
-
-li {
-  padding: 5px;
-}
-
-.title {
-  font-weight: bold;
-  padding: 10px 0;
-}
-
-@media (max-width: 1040px) {
+#page-generation-detail {
   h1.title-header {
-    width: 25ch;
+    font-size: 1.5em;
+    color: $blue;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 30ch;
+    animation: typing 2s steps(19), blink 0.5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
   }
-}
 
-@media (max-width: 950px) {
-  h1.title-header {
-    width: 20ch;
+  @keyframes typing {
+    from {
+      width: 0;
+    }
   }
-}
 
-@media (max-width: 800px) {
-  h1.title-header {
-    width: 20ch;
-    font-size: 1.2em;
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
   }
-}
 
-@media (max-width: 665px) {
-  h1.title-header {
-    width: 19ch;
-    font-size: 1.1em;
+  section.container {
+    padding: 20px;
+    border-radius: 3px;
+    background: $white;
+    text-align: center;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid $blue;
   }
-}
 
-@media (max-width: 600px) {
-  h1.title-header {
-    width: 18ch;
-    font-size: 1em;
+  //scrolbar
+  ::ng-deep .p-scrollpanel .p-scrollpanel-bar {
+    background: $blue;
+    border: 0 none;
   }
-}
 
-@media (max-width: 550px) {
-  h1.title-header {
-    width: 17ch;
-    font-size: 1em;
+  li,
+  .title {
+    font-family: $roboto-mono;
   }
-}
 
-@media (max-width: 511px) {
-  h1.title-header {
-    width: 16ch;
-    font-size: 0.7em;
+  li {
+    padding: 5px;
   }
+
+  .title {
+    font-weight: bold;
+    padding: 10px 0;
+  }
+
+  @include centralize-title-animation(1040px, 25ch, 1.5em);
+  @include centralize-title-animation(950px, 20ch, 1.5em);
+  @include centralize-title-animation(800px, 20ch, 1.2em);
+  @include centralize-title-animation(665px, 19ch, 1.1em);
+  @include centralize-title-animation(600px, 18ch, 1em);
+  @include centralize-title-animation(600px, 18ch, 1em);
+  @include centralize-title-animation(550px, 17ch, 1em);
+  @include centralize-title-animation(511px, 16ch, 0.7);
 }
