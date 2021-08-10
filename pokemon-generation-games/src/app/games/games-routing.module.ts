@@ -13,9 +13,9 @@ const routes: Routes = [
     path: 'detail/:id',
     component: GenerationDetailComponent,
   },
-  { 
-    path: '**', 
-    component: NotFoundComponent 
+  {
+    path: '**',
+    component: NotFoundComponent
   },
 ];
 

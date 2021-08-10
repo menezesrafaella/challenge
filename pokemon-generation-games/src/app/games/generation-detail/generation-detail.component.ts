@@ -23,7 +23,7 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
 
   public loading = false;
 
-  constructor(  
+  constructor(
     private route: ActivatedRoute,
     private gamesService: GamesService,
     private router: Router
@@ -58,8 +58,7 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
         this.id = 8;
         break;
         default:
-          alert(`Não existem informações sobre a ${generation}.`);
-          this.router.navigate(['/games/404'])
+          this.router.navigate(['/games/404']);
         }
 
   }

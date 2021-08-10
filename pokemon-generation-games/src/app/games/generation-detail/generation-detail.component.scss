@@ -40,15 +40,63 @@ section.container {
   border: 0 none;
 }
 
-li, .title{
-  font-family: 'Roboto Mono', monospace;
+li,
+.title {
+  font-family: "Roboto Mono", monospace;
 }
 
 li {
   padding: 5px;
 }
 
-.title{
+.title {
   font-weight: bold;
   padding: 10px 0;
+}
+
+@media (max-width: 1040px) {
+  h1.title-header {
+    width: 25ch;
+  }
+}
+
+@media (max-width: 950px) {
+  h1.title-header {
+    width: 20ch;
+  }
+}
+
+@media (max-width: 800px) {
+  h1.title-header {
+    width: 20ch;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 665px) {
+  h1.title-header {
+    width: 19ch;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 600px) {
+  h1.title-header {
+    width: 18ch;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 550px) {
+  h1.title-header {
+    width: 17ch;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 511px) {
+  h1.title-header {
+    width: 16ch;
+    font-size: 0.7em;
+  }
 }
