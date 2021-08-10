@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    color: #263346;
+
+    img {
+        margin: 15px;
+    }
+    h1{
+        color: #263346;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    span{
+        font-size: 150px;
+    }
+}
+
+
+

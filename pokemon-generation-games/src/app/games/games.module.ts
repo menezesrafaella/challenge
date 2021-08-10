@@ -7,6 +7,7 @@ import { PrimengModule } from '../primeng.module';
 import { GenerationDetailComponent } from './generation-detail/generation-detail.component';
 import { GenerationPipe } from './shared/pipe/generation.pipe';
 import { LoadingComponent } from './shared/components/loading/loading.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
     GenerationDetailComponent,
     GenerationPipe,
     LoadingComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule, GamesRoutingModule, PrimengModule

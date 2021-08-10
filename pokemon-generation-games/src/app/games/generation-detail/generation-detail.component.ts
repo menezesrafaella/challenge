@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { fadeInOut } from '../shared/helpers/animation';
 import { GamesService } from '../shared/service/games.service';
 
@@ -26,6 +26,7 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
   constructor(  
     private route: ActivatedRoute,
     private gamesService: GamesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +59,7 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
         break;
         default:
           alert(`Não existem informações sobre a ${generation}.`);
+          this.router.navigate(['/games/404'])
         }
 
   }
