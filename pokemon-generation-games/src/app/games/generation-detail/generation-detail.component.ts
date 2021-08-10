@@ -10,7 +10,6 @@ import { GamesService } from '../shared/service/games.service';
   animations: [fadeInOut],
 })
 export class GenerationDetailComponent implements OnInit, AfterContentInit {
-
   id: number;
 
   games: any;
@@ -27,7 +26,7 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
     private route: ActivatedRoute,
     private gamesService: GamesService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const generation = this.route.snapshot.paramMap.get('id');
@@ -57,43 +56,41 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
       case 'generation-viii':
         this.id = 8;
         break;
-        default:
-          this.router.navigate(['/games/404']);
-        }
-
-  }
-
-  ngAfterContentInit(): void {
-    this.games = setTimeout(
-      () => this.getDetailedGeneration(this.id),
-      100
-    );
-  }
-
-  getDetailedGeneration(id): any{
-    this.loading = true;
-
-    return this.gamesService.getGameGenerationById(id).subscribe((generation) => {
-      this.games = generation;
-      if (this.games.pokemon_species){
-        this.species = this.games.pokemon_species;
-      }
-      if (this.games.types){
-        this.types = this.games.types;
-      }
-      if (this.games.version_groups){
-        this.versions = this.games.version_groups;
-      }
-      this.loading = false;
-    }, err => {
-      this.loading = false;
-    });
-  }
-
-  firstLetter(word): any{
-    if (word){
-      return word.charAt(0).toUpperCase() + word.slice(1);
+      default:
+        this.router.navigate(['/games/404']);
     }
   }
 
+  ngAfterContentInit(): void {
+    this.games = setTimeout(() => this.getDetailedGeneration(this.id), 100);
+  }
+
+  getDetailedGeneration(id): any {
+    this.loading = true;
+
+    return this.gamesService.getGameGenerationById(id).subscribe(
+      (generation) => {
+        this.games = generation;
+        if (this.games.pokemon_species) {
+          this.species = this.games.pokemon_species;
+        }
+        if (this.games.types) {
+          this.types = this.games.types;
+        }
+        if (this.games.version_groups) {
+          this.versions = this.games.version_groups;
+        }
+        this.loading = false;
+      },
+      (err) => {
+        this.loading = false;
+      }
+    );
+  }
+
+  firstLetter(word): any {
+    if (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+  }
 }

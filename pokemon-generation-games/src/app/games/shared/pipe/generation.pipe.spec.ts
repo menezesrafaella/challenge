@@ -1,8 +1,17 @@
 import { GenerationPipe } from './generation.pipe';
 
 describe('GenerationPipe', () => {
+  let pipe: GenerationPipe;
+  beforeEach(() => {
+    pipe = new GenerationPipe();
+  });
+
   it('create an instance', () => {
-    const pipe = new GenerationPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('should providing transformation to true value', () => {
+    expect(pipe.transform('generation-i')).toEqual('Primeira Geração');
+  });
+
 });
