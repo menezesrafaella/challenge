@@ -17,8 +17,7 @@
 <p align="center"> <a>Para saber mais sobre o mundo de jogos do Pokémon.</a> </p>
 
 <a>Como usar:
-  Muito simples! Você clica em qual geração você quer saber sobre no botão, e você entrará numa página com os detalhes dessa geração em questão.
-  <img src="../../assets/screenshots/generation-list.png">
+  Muito simples! Você clica em qual geração você quer saber sobre no botão, e você entrará numa página com os detalhes dessa geração.
 </a>
     
  <a>
