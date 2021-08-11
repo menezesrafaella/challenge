@@ -6,6 +6,7 @@ import { PrimengModule } from './primeng.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SharedModule } from './games/shared/shared.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     HttpClientModule,
     PrimengModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
