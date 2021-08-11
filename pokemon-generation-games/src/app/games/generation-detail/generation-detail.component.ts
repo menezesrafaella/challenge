@@ -20,6 +20,8 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
 
   versions: [];
 
+  generation: any;
+
   public loading = false;
 
   constructor(
@@ -29,8 +31,14 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
   ) {}
 
   ngOnInit(): void {
-    const generation = this.route.snapshot.paramMap.get('id');
 
+    this.generation = this.route.snapshot.paramMap.get('id');
+
+    this.generationById(this.generation)
+
+  }
+
+  generationById(generation): any{
     switch (generation) {
       case 'generation-i':
         this.id = 1;
