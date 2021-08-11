@@ -26,7 +26,6 @@
 
         ### 😎 Rodando o Front-End:
 
-        ```bash
         # Clone este repositório
         $ git clone <https://github.com/menezesrafaella/challenge>
 
