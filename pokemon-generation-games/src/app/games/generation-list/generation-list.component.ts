@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fadeInOut } from '../shared/helpers/animation';
+import { fadeInOut } from '../shared/helper/animation';
 import { GamesService } from '../shared/service/games.service';
 
 @Component({

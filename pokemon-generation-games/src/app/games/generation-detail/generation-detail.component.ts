@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { fadeInOut } from '../shared/helpers/animation';
+import { fadeInOut } from '../shared/helper/animation';
 import { GamesService } from '../shared/service/games.service';
 
 @Component({
