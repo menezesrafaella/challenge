@@ -14,7 +14,7 @@
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-<p align="center"> <a href="#objetivo">Para saber mais sobre o mundo de jogos do Pokémon.</a> </p>•
+<p align="center"> <a href="#objetivo">Para saber mais sobre o mundo de jogos do Pokémon.</a> </p>
 
 <a href=#como-usar> </a>
     
@@ -42,11 +42,11 @@
         # O servidor inciará na porta:4200 - acesse <http://localhost:4200/>
  </a> 
   <div>
-  <p>Testes: <br><br>
+  <p href=#testes>Testes: <br><br>
   Para rodar os testes da aplicação: <br>
     $ ng test
   </p>
- <p>Tecnologias: <br>
+ <p href=#tecnologias>Tecnologias: <br>
    <ul>
      <li>Angular: v11.2.8</li>
      <li>Primeng: v11.4.2</li>
