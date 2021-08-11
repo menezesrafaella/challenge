@@ -14,11 +14,11 @@
    * [Tecnologias](#tecnologias)
 <!--te-->
 
-<p align="center"> <a href="#objetivo">Para saber mais sobre o mundo de jogos do Pokémon.</a> </p>
+<p align="center"> <a>Para saber mais sobre o mundo de jogos do Pokémon.</a> </p>
 
 <a href=#como-usar> </a>
     
- <a href="#pre-requisitos">
+ <a>
    Pré-requisitos: <br>
         Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
         [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [Angular](https://angular.io/cli).
@@ -42,11 +42,11 @@
         # O servidor inciará na porta:4200 - acesse <http://localhost:4200/>
  </a> 
   <div>
-  <p href=#testes>Testes: <br><br>
+  <p>Testes: <br><br>
   Para rodar os testes da aplicação: <br>
     $ ng test
   </p>
- <p href=#tecnologias>Tecnologias: <br>
+ <p>Tecnologias: <br>
    <ul>
      <li>Angular: v11.2.8</li>
      <li>Primeng: v11.4.2</li>
