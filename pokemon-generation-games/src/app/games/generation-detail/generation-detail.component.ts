@@ -96,9 +96,4 @@ export class GenerationDetailComponent implements OnInit, AfterContentInit {
     );
   }
 
-  firstLetter(word): any {
-    if (word) {
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    }
-  }
 }

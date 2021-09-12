@@ -8,7 +8,7 @@
     display: flex;
   }
 
-  h1.title-header {
+  h1.title__header {
     font-size: 1.5em;
     color: $blue;
     font-weight: bold;
@@ -48,7 +48,7 @@
   }
 
   li,
-  .title {
+  .title__content {
     font-family: $roboto-mono;
   }
 
@@ -56,9 +56,13 @@
     padding: 5px;
   }
 
-  .title {
+  .title__content {
     font-weight: bold;
     padding: 10px 0;
+  }
+
+  .content{
+    text-transform: capitalize;
   }
 
   @include centralize-title-animation(1040px, 25ch, 1.5em);
