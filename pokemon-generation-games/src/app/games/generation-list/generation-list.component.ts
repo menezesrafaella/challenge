@@ -10,12 +10,9 @@ import { GamesService } from '../shared/service/games.service';
 })
 export class GenerationListComponent implements OnInit {
 
-  generation: any[];
-
-  games: any;
-
-  cols: any[];
-
+  public cols: any[];
+  public games: any;
+  public generation: any[];
   public loading = false;
 
   constructor(private gamesService: GamesService) { }

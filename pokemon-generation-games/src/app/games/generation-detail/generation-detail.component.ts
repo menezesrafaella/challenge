@@ -10,19 +10,13 @@ import { GamesService } from '../shared/service/games.service';
   animations: [fadeInOut],
 })
 export class GenerationDetailComponent implements OnInit, AfterContentInit {
-  id: number;
-
-  games: any;
-
-  species: [];
-
-  types: [];
-
-  versions: [];
-
-  generation: any;
-
+  public id: number;
+  public games: any;
+  public generation: any;
   public loading = false;
+  public species: [];
+  public types: [];
+  public versions: [];
 
   constructor(
     private route: ActivatedRoute,
